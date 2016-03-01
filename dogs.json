@@ -1,0 +1,23 @@
+[
+  {
+    "name":"Brownie",
+    "breed":"Terrier mix",
+    "color":"brindle",
+    "weight":28,
+    "owner":"Shane"
+  }, 
+  {
+    "name":"Snickers",
+    "breed":"Hound mix",
+    "color":"black and tan",
+    "weight":55,
+    "owner":"Chris"
+  },
+  {
+    "name":"Bart",
+    "breed":"Jack Russell",
+    "color":"tricolor",
+    "weight":15,
+    "owner":"Shane"
+  }
+]
