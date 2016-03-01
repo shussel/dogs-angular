@@ -11,4 +11,7 @@ app.controller('dogsController', function($scope, $http) {
 		error(function() {
 			alert('error');
 	});
+
+	$scope.sortType     = 'id';
+	$scope.sortReverse  = false;
 });

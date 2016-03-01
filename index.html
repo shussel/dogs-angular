@@ -12,27 +12,43 @@
   </head>
   <body ng-app="dogs" ng-controller="dogsController" ng-cloak>
 
-    <nav class="navbar-primary navbar-inverse">
+    <nav class="navbar navbar-inverse">
       <a class="navbar-brand" href="#">Dogs</a>
     </nav>
 
     <table class="table table-striped table-bordered">
-      <tr>
-        <th>#</th>
-        <th>Name</th>
-        <th>Breed</th>
-        <th>Color</th>
-        <th>Weight</th>
-        <th>Owner</th>
-      </tr>
-      <tr ng-repeat="dog in dogs | orderBy:'name'">
-        <td>{{ $index + 1 }}.</td>
-        <td>{{ dog.name }}</td>
-        <td>{{ dog.breed }}</td>
-        <td>{{ dog.color }}</td>
-        <td>{{ dog.weight }} lbs.</td>
-        <td>{{ dog.owner }}</td>
-      </tr>
+      <thead>
+        <tr>
+          <th><a href="#" ng-click="sortType = 'id'; sortReverse = !sortReverse">ID</a>
+              <span ng-show="sortType == 'id' && !sortReverse" class="glyphicon glyphicon-chevron-down"></span>
+              <span ng-show="sortType == 'id' && sortReverse" class="glyphicon glyphicon-chevron-up"></span></th>
+          <th><a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">Name</a>
+              <span ng-show="sortType == 'name' && !sortReverse" class="glyphicon glyphicon-chevron-down"></span>
+              <span ng-show="sortType == 'name' && sortReverse" class="glyphicon glyphicon-chevron-up"></span></th>
+          <th><a href="#" ng-click="sortType = 'breed'; sortReverse = !sortReverse">Breed</a>
+              <span ng-show="sortType == 'breed' && !sortReverse" class="glyphicon glyphicon-chevron-down"></span>
+              <span ng-show="sortType == 'breed' && sortReverse" class="glyphicon glyphicon-chevron-up"></span></th>
+          <th><a href="#" ng-click="sortType = 'color'; sortReverse = !sortReverse">Color</a>
+              <span ng-show="sortType == 'color' && !sortReverse" class="glyphicon glyphicon-chevron-down"></span>
+              <span ng-show="sortType == 'color' && sortReverse" class="glyphicon glyphicon-chevron-up"></span></th>
+          <th><a href="#" ng-click="sortType = 'weight'; sortReverse = !sortReverse">Weight</a>
+              <span ng-show="sortType == 'weight' && !sortReverse" class="glyphicon glyphicon-chevron-down"></span>
+              <span ng-show="sortType == 'weight' && sortReverse" class="glyphicon glyphicon-chevron-up"></span></th>
+          <th><a href="#" ng-click="sortType = 'owner'; sortReverse = !sortReverse">Owner</a>
+              <span ng-show="sortType == 'owner' && !sortReverse" class="glyphicon glyphicon-chevron-down"></span>
+              <span ng-show="sortType == 'owner' && sortReverse" class="glyphicon glyphicon-chevron-up"></span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="dog in dogs | orderBy:sortType:sortReverse">
+          <td>{{ dog.id }}.</td>
+          <td>{{ dog.name }}</td>
+          <td>{{ dog.breed }}</td>
+          <td>{{ dog.color }}</td>
+          <td>{{ dog.weight }} lbs.</td>
+          <td>{{ dog.owner }}</td>
+        </tr>
+      </tbody>
     </table>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
