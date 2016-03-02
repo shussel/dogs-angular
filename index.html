@@ -27,7 +27,7 @@
           <form class="navbar-form navbar-right" role="search">
             <div class="form-group">
               <label for="searche">Search</label>
-              <input type="text" class="form-control" placeholder="Search" name="search" ng-model="searchText">
+              <input type="text" class="form-control" placeholder="Search" name="search" ng-model="search.$">
             </div>
           </form>
         </div>
@@ -58,7 +58,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr ng-repeat="dog in dogs | filter:searchText | orderBy:sortType:sortReverse">
+        <tr ng-repeat="dog in dogs | filter:search:strict | orderBy:sortType:sortReverse">
           <td>{{ dog.id }}.</td>
           <td>{{ dog.name }}</td>
           <td>{{ dog.breed }}</td>
