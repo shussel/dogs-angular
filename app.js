@@ -1,6 +1,6 @@
 var app = angular.module('dogs', []);
 
-app.controller('dogsController', function($scope, dogsService) {
+app.controller('dogsController', ['$scope', 'dogsService', function($scope, dogsService) {
 	'use strict';
 
 	$scope.sortType     = 'id';
@@ -11,9 +11,9 @@ app.controller('dogsController', function($scope, dogsService) {
 		$scope.error = 'unable to get the dogs';
 	});
 	
-});
+}]);
 
-app.service('dogsService', function($http, $q) {
+app.service('dogsService', ['$http', function($http) {
 
 	this.getDogs = function() {
 
@@ -21,4 +21,4 @@ app.service('dogsService', function($http, $q) {
 					return response.data;
 			   });
 	}
-});
+}]);
