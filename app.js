@@ -22,3 +22,13 @@ app.service('dogsService', ['$http', function($http) {
 			   });
 	}
 }]);
+
+app.directive('sortIndicator', function() {
+  return {
+	restrict: 'E',
+    scope: {
+		column: '@'
+	},
+    template: '<span ng-show="$parent.sortType == ' + "'{{column}}'" + ' && !$parent.sortReverse" class="glyphicon glyphicon-chevron-down"></span><span ng-show="$parent.sortType == ' + "'{{column}}'" + ' && $parent.sortReverse" class="glyphicon glyphicon-chevron-up"></span>'
+  };
+});
