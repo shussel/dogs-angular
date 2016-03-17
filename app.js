@@ -34,12 +34,15 @@ app.directive('sortHeader', function() {
 		sort: '='
 	},
     templateUrl: 'sortHeader.html',
-	controller: function($scope) {
-
-		$scope.toggleSort = function() {
-			$scope.sort.column = $scope.column;
-			$scope.sort.reverse = !$scope.sort.reverse;
-		};
-	}
+	bindToController: true,
+	controllerAs: "ctrl",
+	controller: SortController
   };
 });
+
+function SortController() {
+	this.toggleSort = function() {
+		this.sort.column = this.column;
+		this.sort.reverse = !this.sort.reverse;
+	};
+}
