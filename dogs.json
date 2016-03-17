@@ -1,34 +1,34 @@
 [
   {
-    "id": 1,
-    "name":"Brownie",
-    "breed":"Terrier mix",
-    "color":"brindle",
-    "weight":28,
-    "owner":"Shane"
+    "ID": 1,
+    "Name":"Brownie",
+    "Breed":"Terrier mix",
+    "Color":"brindle",
+    "Weight":28,
+    "Owner":"Shane"
   }, 
   {
-    "id": 2,
-    "name":"Snickers",
-    "breed":"Hound mix",
-    "color":"black and tan",
-    "weight":55,
-    "owner":"Chris"
+    "ID": 2,
+    "Name":"Snickers",
+    "Breed":"Hound mix",
+    "Color":"black and tan",
+    "Weight":55,
+    "Owner":"Chris"
   },
   {
-    "id": 3,
-    "name":"Bart",
-    "breed":"Jack Russell",
-    "color":"tricolor",
-    "weight":15,
-    "owner":"Shane"
+    "ID": 3,
+    "Name":"Bart",
+    "Breed":"Jack Russell",
+    "Color":"tricolor",
+    "Weight":15,
+    "Owner":"Shane"
   },
   {
-    "id": 4,
-    "name":"Shawn",
-    "breed":"Poodle",
-    "color":"white",
-    "weight":20,
-    "owner":"Judy"
+    "ID": 4,
+    "Name":"Shawn",
+    "Breed":"Poodle",
+    "Color":"white",
+    "Weight":20,
+    "Owner":"Judy"
   }
 ]

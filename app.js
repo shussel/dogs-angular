@@ -3,8 +3,11 @@ var app = angular.module('dogs', []);
 app.controller('dogsController', ['$scope', 'dogsService', function($scope, dogsService) {
 	'use strict';
 
-	$scope.sortType     = 'id';
-	$scope.sortReverse  = false;
+	$scope.sort = {
+		'column': 'ID',
+		'reverse': false
+	}
+
     dogsService.getDogs().then(function(data) {
 		$scope.dogs = data;
 	}).catch(function() {
@@ -23,12 +26,20 @@ app.service('dogsService', ['$http', function($http) {
 	}
 }]);
 
-app.directive('sortIndicator', function() {
+app.directive('sortHeader', function() {
   return {
-	restrict: 'E',
+	restrict: 'A',
     scope: {
-		column: '@'
+		column: '@',
+		sort: '='
 	},
-    template: '<span ng-show="$parent.sortType == ' + "'{{column}}'" + ' && !$parent.sortReverse" class="glyphicon glyphicon-chevron-down"></span><span ng-show="$parent.sortType == ' + "'{{column}}'" + ' && $parent.sortReverse" class="glyphicon glyphicon-chevron-up"></span>'
+    templateUrl: 'sortHeader.html',
+	controller: function($scope) {
+
+		$scope.toggleSort = function() {
+			$scope.sort.column = $scope.column;
+			$scope.sort.reverse = !$scope.sort.reverse;
+		};
+	}
   };
 });
