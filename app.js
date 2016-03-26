@@ -3,6 +3,8 @@ var app = angular.module('dogs', []);
 app.controller('dogsController', ['$scope', 'dogsService', function($scope, dogsService) {
 	'use strict';
 
+	$scope.columns = ['ID','Name','Breed','Color','Weight','Owner'];
+	
 	$scope.sort = {
 		'column': 'ID',
 		'reverse': false
@@ -36,13 +38,29 @@ app.directive('sortHeader', function() {
     templateUrl: 'sortHeader.html',
 	bindToController: true,
 	controllerAs: "ctrl",
-	controller: SortController
+	controller: SortHeaderController
   };
 });
 
-function SortController() {
+function SortHeaderController() {
 	this.toggleSort = function() {
 		this.sort.column = this.column;
 		this.sort.reverse = !this.sort.reverse;
 	};
 }
+
+app.directive('sortHeaders', function() {
+  return {
+	restrict: 'A',
+    scope: {
+		columns: '=',
+		sort: '='
+	},
+    templateUrl: 'sortHeaders.html',
+	bindToController: true,
+	controllerAs: "ctrl",
+	controller: SortHeadersController
+  };
+});
+
+function SortHeadersController() {}
