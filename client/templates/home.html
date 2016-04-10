@@ -1,0 +1,24 @@
+---
+name: home
+url: /
+controller: dogsController
+---
+
+<div class="grid-container">
+  <table class="table" ng-show="dogs">
+    <thead sort-headers sort="sort" columns="columns"></thead>
+    <tbody>
+      <tr ng-repeat="dog in dogs | filter:search:strict | orderBy:sort.column:sort.reverse track by $index">
+        <td>{{ dog.ID }}.</td>
+        <td>{{ dog.Name }}</td>
+        <td>{{ dog.Breed }}</td>
+        <td>{{ dog.Color }}</td>
+        <td>{{ dog.Weight }} lbs.</td>
+        <td>{{ dog.Owner }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p ng-show="error">{{ error }}</p>
+
+</div>
