@@ -10,7 +10,7 @@
     'foundation.dynamicRouting',
     'foundation.dynamicRouting.animations'
   ])
-	.controller('dogsController', function($scope, dogsService) {
+	.controller('dogListController', function($scope, $state, dogsService) {
 
 		$scope.columns = ['ID','Name','Breed','Color','Weight','Owner'];
 		

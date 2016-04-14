@@ -1,0 +1,16 @@
+---
+name: grid
+url: /grid
+controller: dogListController
+---
+
+<div class="grid-block" ng-repeat="dog in dogs | filter:search:strict | orderBy:sort.column:sort.reverse">
+  <div class="grid-content small-up-4">
+    <div>{{ dog.ID }}.</div>
+    <div>{{ dog.Name }}</div>
+    <div>{{ dog.Breed }}</div>
+    <div>{{ dog.Color }}</div>
+    <div>{{ dog.Weight }} lbs.</div>
+    <div>{{ dog.Owner }}</div>
+  </div>
+</div>

@@ -1,15 +1,7 @@
 ---
 name: home
 url: /
-controller: dogsController
+controller: dogListController
 ---
 
-<div class="grid-block small-up-6" sort-headers sort="sort" columns="columns"></div>
-<div class="grid-block small-up-6" ng-repeat="dog in dogs | filter:search:strict | orderBy:sort.column:sort.reverse">
-  <div class="grid-content">{{ dog.ID }}.</div>
-  <div class="grid-content">{{ dog.Name }}</div>
-  <div class="grid-content">{{ dog.Breed }}</div>
-  <div class="grid-content">{{ dog.Color }}</div>
-  <div class="grid-content">{{ dog.Weight }} lbs.</div>
-  <div class="grid-content">{{ dog.Owner }}</div>
-</div>
+Home
